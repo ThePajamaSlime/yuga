@@ -1,2 +1,2 @@
-web: npm start
+web: node yuga.js
 worker: node yuga.js
