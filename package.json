@@ -7,7 +7,7 @@
   "description": "A general discord bot made in discord.js",
   "main": "yuga.js",
   "dependencies": {
-    "discord.js": "^12.0.0",
+    "discord.js": "hydrabolt/discord.js",
     "bufferutil": "^3.0.2",
     "eslint": "^4.6.1",
     "libsodium-wrappers": "^0.5.2",
