@@ -1,6 +1,9 @@
 {
   "name": "yuga",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.3"
+    },
   "description": "A general discord bot made in discord.js",
   "main": "yuga.js",
   "dependencies": {
