@@ -13,7 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node yuga.js"
+    "test": "node yuga.js",
+    "start": "node yuga.js"
   },
   "repository": {
     "type": "git",
