@@ -1,0 +1,28 @@
+{
+  "name": "yuga",
+  "version": "1.0.0",
+  "description": "A general discord bot made in discord.js",
+  "main": "yuga.js",
+  "dependencies": {
+    "bufferutil": "^3.0.2",
+    "eslint": "^4.6.1",
+    "libsodium-wrappers": "^0.5.2",
+    "opusscript": "^0.0.3",
+    "uws": "^8.14.1",
+    "ytdl-core": "^0.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node yuga.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strikerrr/yuga.git"
+  },
+  "author": "Striker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strikerrr/yuga/issues"
+  },
+  "homepage": "https://github.com/Strikerrr/yuga#readme"
+}
