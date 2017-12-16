@@ -21,3 +21,13 @@ Authored and maintained by Striker.
 
 # Discord Bots
 [![Discord Bots](https://discordbots.org/api/widget/status/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+
+[![Discord Bots](https://discordbots.org/api/widget/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+
+[![Discord Bots](https://discordbots.org/api/widget/servers/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+
+[![Discord Bots](https://discordbots.org/api/widget/upvotes/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+
+[![Discord Bots](https://discordbots.org/api/widget/lib/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+
+[![Discord Bots](https://discordbots.org/api/widget/owner/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
