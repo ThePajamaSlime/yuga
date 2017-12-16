@@ -20,9 +20,10 @@ Please for the love of god, make sure Yuga has admin perms or else shit WILL bre
 Authored and maintained by Striker.
 
 # Discord Bots
+[![Discord Bots](https://discordbots.org/api/widget/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+
 [![Discord Bots](https://discordbots.org/api/widget/status/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
 
-[![Discord Bots](https://discordbots.org/api/widget/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
 
 [![Discord Bots](https://discordbots.org/api/widget/servers/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
 
