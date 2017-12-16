@@ -1,4 +1,4 @@
-exports.run = async(client, msg) => {
+exports.run = async (client, msg) => {
   const Discord = require('discord.js');
 
   const embed = new Discord.MessageEmbed()
