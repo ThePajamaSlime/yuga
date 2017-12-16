@@ -4,8 +4,7 @@ const fs = require('fs');
 
 
 const {
-  token,
-  dbtoken
+  token
 } = require('./config.json');
 
 const color = require('./db/db.json').color;
@@ -21,13 +20,6 @@ function error(err) {
     embed: errorembed
   });
 }
-
-
-
-
-client.on('ready', update);
-client.on('guildCreate', update);
-client.on('guildDelete', update);
 
 //Event Handler
 fs.readdir('./events/', (err, files) => {
