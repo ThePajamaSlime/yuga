@@ -6,8 +6,6 @@ const {
   request
 } = require('https');
 
-const dbtoken = require('../config.json').dbtoken;
-
 exports.run = async (client, guild) => {
 
   const update = () => {
