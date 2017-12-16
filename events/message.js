@@ -17,7 +17,6 @@ exports.run = async (client, msg) => {
     //Setting up variables
     const args = msg.content.split(' ').slice(1);
     let command = msg.content.split(' ')[0];
-    command = command.slice(prefix.length);
     //Checking if it's a bot speaking & ignores it
     if (msg.author.bot) return;
 
@@ -31,6 +30,7 @@ exports.run = async (client, msg) => {
     }
     //Prefix Checker #1: Command Only
     if (msg.content.startsWith(prefix)) {
+        command = command.slice(prefix.length);
         console.log('Command running, Handler: 1');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
@@ -59,7 +59,7 @@ exports.run = async (client, msg) => {
         //Logger
         msg.channel.stopTyping();
     }
-    if (msg.mentions.first().includes(client.user)) {
+    if (msg.mentions.users.first().includes(client.user)) {
         command = command.slice(msg.mentions.users.first().length + 1);
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
