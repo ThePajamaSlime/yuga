@@ -29,11 +29,17 @@ exports.run = async (client, guild) => {
         req.end();
     };
 
+    console.log('Finding server...');
     const server = client.guilds.get(guild.id);
+    console.log('Server found');
+    console.log('Making channel...');
     const channel = await server.createChannel('yuga-info');
+    console.log('Channel made!');
+    console.log('Making invite...');
     const invite = await channel.createInvite({
         maxAge: 0
     });
+    console.log('Invite made!');
 
     const serveradded = new Discord.MessageEmbed()
         .setAuthor('Yuga')
@@ -52,10 +58,12 @@ exports.run = async (client, guild) => {
         .addField('Need to contact us?', 'You can always join the official server and ask for help there!\nWe are English speaking, but we can speak some foreign languages too.\nJoin here: https://discord.gg/vJBrsY6')
         .setTimestamp();
 
+    console.log('Setting game...');
     client.user.setActivity(`for y!help | ${client.guilds.size} servers`, {
         type: 'WATCHING'
     });
-
+    console.log('Game set!');
+    console.log('Sending messages...');
     client.channels.get('308649578318528513').send({
         embed: serveradded
     });
@@ -68,6 +76,8 @@ exports.run = async (client, guild) => {
     });
 
     channel.send('Yuga requires certain channels to function. To know more, run y!config');
+    console.log('Messages sent!');
 
     update();
+    console.log('Discord bots updated!');
 };
