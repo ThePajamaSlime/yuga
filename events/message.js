@@ -14,8 +14,7 @@ exports.run = async (client, msg) => {
             embed: errorembed
         });
     }
-    //Setting up variables
-    const args = msg.content.split(' ').slice(1);
+    let args = msg.content.split(' ').slice(1);
     let command = msg.content.split(' ')[0];
     //Checking if it's a bot speaking & ignores it
     if (msg.author.bot) return;
@@ -65,6 +64,7 @@ exports.run = async (client, msg) => {
         yuga = '<@294141889010204684> ';
         command = msg.content;
         command = command.slice(yuga.length);
+        args = command.split(' ');
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
