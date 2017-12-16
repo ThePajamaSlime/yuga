@@ -66,7 +66,7 @@ exports.run = async (client, msg) => {
         yuga = '<@294141889010204684> ';
         command = msg.content;
         command = command.slice(yuga.length);
-        args = msg.content.slice(yuga.length + command.length)
+        args = msg.content.slice(0, yuga.length + 1)
         command = command.slice(command.length, args.length)
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
