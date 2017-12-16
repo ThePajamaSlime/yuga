@@ -64,7 +64,7 @@ exports.run = async (client, msg) => {
         yuga = '<@294141889010204684> ';
         command = msg.content;
         command = command.slice(yuga.length);
-        args = command.split(' ');
+        args = command.slice(command.length);
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
