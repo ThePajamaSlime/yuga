@@ -10,9 +10,10 @@ const {
 const dbtoken = require('../config.json').dbtoken;
 
 exports.run = async (client, guild) => {
+    console.log('Yuga has been added to a new server!');
     const update = () => {
         const data = stringify({
-            server_count: client.guilds.size
+            server_count: client.servers.size
         });
         const req = request({
             host: 'discordbots.org',
@@ -29,8 +30,9 @@ exports.run = async (client, guild) => {
     };
 
     update();
-    guild = client.guilds.get(guild.id);
-    const channel = await guild.createChannel('yuga-info')
+
+    const server = client.servers.get(guild.id);
+    const channel = await server.createChannel('yuga-info');
     const invite = await channel.createInvite({
         maxAge: 0
     });
@@ -41,10 +43,10 @@ exports.run = async (client, guild) => {
         .setTitle('New server added!')
         .setThumbnail(client.user.avatarURL())
         .setDescription('Yuga has been added to a new server!\nThe server info will be displayed below.')
-        .addField('Server info', `Name: ${guild.name}\nID: ${guild.id}\nMade: ${guild.createdAt}\nOwner: ${guild.owner.user.tag} (ID: ${guild.ownerID})\nRegion: ${guild.region}\nRoles: ${guild.roles.size}\nVerification Level: ${guild.verificationLevel}\nMembers: ${guild.members.size} \nInvite link: ${invite}`)
+        .addField('Server info', `Name: ${server.name}\nID: ${server.id}\nMade: ${server.createdAt}\nOwner: ${server.owner.user.tag} (ID: ${server.ownerID})\nRegion: ${server.region}\nRoles: ${server.roles.size}\nVerification Level: ${server.verificationLevel}\nMembers: ${server.members.size} \nInvite link: ${invite}`)
         .setTimestamp();
 
-    const channelwelcome = new Discord.MessageEmbed()
+    const welcome = new Discord.MessageEmbed()
         .setAuthor('Yuga')
         .setThumbnail(client.user.avatarURL())
         .setColor('#ff4500')
@@ -52,27 +54,19 @@ exports.run = async (client, guild) => {
         .addField('Need to contact us?', 'You can always join the official server and ask for help there!\nWe are English speaking, but we can speak some foreign languages too.\nJoin here: https://discord.gg/vJBrsY6')
         .setTimestamp();
 
-    const ownerwelcome = new Discord.MessageEmbed()
-        .setAuthor('Yuga')
-        .setThumbnail(client.user.avatarURL())
-        .setColor('#ff4500')
-        .addField('Thanks for adding Yuga!', 'Hi! I\'m Yuga, thanks for adding me.\nI have many features, and if you wish to know them use "y!help" to get a list of all the amazing stuff I can do!\nThanks for listening, and I hope you enjoy using Yuga!')
-        .addField('Need to contact us?', 'You can always join the official server and ask for help there!\nWe are English speaking, but we can speak some foreign languages too.\nJoin here: https://discord.gg/vJBrsY6')
-        .setTimestamp();
-
-    client.user.setActivity(`for y!help | ${client.guilds.size} servers`, {
+    client.user.setActivity(`for y!help | ${client.servers.size} servers`, {
         type: 'WATCHING'
     });
 
     client.channels.get('308649578318528513').send({
         embed: serveradded
     });
-    guild.owner.send({
-        embed: ownerwelcome
+    server.owner.send({
+        embed: welcome
     });
 
     channel.send({
-        embed: channelwelcome
+        embed: welcome
     });
 
     channel.send('Yuga requires certain channels to function. To know more, run y!config');
