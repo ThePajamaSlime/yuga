@@ -5,15 +5,13 @@ const client = new Discord.Client();
 const fs = require('fs');
 
 const color = require('./db/db.json').color;
-const striker = client.users.get('215509157837537280');
-
 function error(err) {
   const errorembed = new Discord.MessageEmbed()
     .setColor(color)
     .setTitle('New Error Caught!')
     .setTimestamp()
     .setDescription(`\`\`\`xl\n${err.stack}\`\`\``);
-  client.channels.get('385485532458778626').send(striker, {
+  client.channels.get('385485532458778626').send('<@215509157837537280>', {
     embed: errorembed
   });
 }
