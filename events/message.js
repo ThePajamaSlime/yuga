@@ -60,7 +60,7 @@ exports.run = async (client, msg) => {
         msg.channel.stopTyping();
     }
     if (msg.mentions.first().includes(client.user)) {
-        command = command.slice(msg.mentions.first().length + 1);
+        command = command.slice(msg.mentions.users.first().length + 1);
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
