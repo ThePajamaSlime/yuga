@@ -59,7 +59,7 @@ exports.run = async (client, msg) => {
         //Logger
         msg.channel.stopTyping();
     }
-    if (msg.mentions.users.first().has(client.user, {
+    if (msg.mentions.users.first().has(client.user.id, {
             ignoreEveryone: true
         })) {
         command = command.slice(msg.mentions.users.first().length + 1);
