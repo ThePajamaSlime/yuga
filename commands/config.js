@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 
 exports.run = (client, msg, args) => {
 
-    const guild = client.guilds.get(msg.guild.id);
+    const guild = msg.guild;
     const configselection = args.join(' ');
     const channel = msg.channel;
     const configoptions = new Discord.MessageEmbed()
         .setTitle('CONFIG OPTIONS')
         .setAuthor('Yuga')
         .setColor(0xFF0000)
-        .addField('Current options', 'welcome msgs\ngoodbye msgs\nwarnings\nALL')
+        .addField('Current options', 'welcome messages\ngoodbye messages\nwarnings\nALL')
         .setThumbnail(client.user.avatarURL())
         .setTimestamp();
 
@@ -17,32 +17,32 @@ exports.run = (client, msg, args) => {
         .setTitle('Warn Usage')
         .setAuthor('Yuga')
         .setColor(0x32CD32)
-        .addField('About', 'Configurates all necessary channels for the features such as welcome msgs', false)
+        .addField('About', 'Configurates all necessary channels for the features such as welcome messages', false)
         .addField('Usage', 'y!config <any of the config options>\ny!config ALL\ny!config options (to get options)', false)
         .addField('Perms required', 'None')
         .setThumbnail(client.user.avatarURL())
         .setTimestamp();
 
-    if (configselection == 'welcome msgs') {
+    if (configselection == 'welcome messages') {
         channel.startTyping();
         msg.react('✅');
-        guild.createChannel('yuga-welcome');
-        msg.reply('Welcome msgs configurated!');
+        guild.createChannel('yuga-welcome', 'text');
+        msg.reply('Welcome messages configurated!');
         channel.stopTyping();
     }
 
-    if (configselection == 'goodbye msgs') {
+    if (configselection == 'goodbye messages') {
         channel.startTyping();
         msg.react('✅');
-        guild.createChannel('yuga-goodbye');
-        msg.reply('Goodbye msgs configurated!');
+        guild.createChannel('yuga-goodbye', 'text');
+        msg.reply('Goodbye messages configurated!');
         channel.stopTyping();
     }
 
     if (configselection == 'warnings') {
         channel.startTyping();
         msg.react('✅');
-        guild.createChannel('yuga-warnings');
+        guild.createChannel('yuga-warnings', 'text');
         msg.reply('Warnings configurated!');
         channel.stopTyping();
     }
@@ -59,9 +59,9 @@ exports.run = (client, msg, args) => {
     if (configselection == 'ALL') {
         msg.react('✅');
         channel.startTyping();
-        guild.createChannel('yuga-warnings');
-        guild.createChannel('yuga-goodbye');
-        guild.createChannel('yuga-welcome');
+        guild.createChannel('yuga-warnings', 'text');
+        guild.createChannel('yuga-goodbye', 'text');
+        guild.createChannel('yuga-welcome', 'text');
         msg.reply('Everything configurated!');
         channel.stopTyping();
     }
