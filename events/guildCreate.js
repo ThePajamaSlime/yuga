@@ -33,7 +33,7 @@ exports.run = async (client, guild) => {
     const server = client.guilds.get(guild.id);
     console.log('Server found');
     console.log('Making channel...');
-    const channel = await server.createChannel('yuga-info');
+    const channel = await server.createChannel('yuga-info', 'text');
     console.log('Channel made!');
     console.log('Making invite...');
     const invite = await channel.createInvite({
