@@ -1,4 +1,4 @@
-const prefix = require('../config.json').prefix;
+const prefix = 'y!';
 const Discord = require('discord.js');
 const color = require('../db/db.json').color;
 

@@ -1,11 +1,8 @@
+require('dotenv').config();
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
-
-
-const {
-  token
-} = require('./config.json');
 
 const color = require('./db/db.json').color;
 const striker = client.users.get('215509157837537280');
@@ -31,7 +28,7 @@ fs.readdir('./events/', (err, files) => {
   });
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
 
 process.on('uncaughtException', (err) => {
   error(err);

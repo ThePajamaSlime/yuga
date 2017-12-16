@@ -17,7 +17,8 @@
     "urban.js": "2.4.3",
     "moment": "2.19.4",
     "moment-duration-format": "2.0.1",
-    "google-translate-api": "2.3.0"
+    "google-translate-api": "2.3.0",
+    "dotenv": "4.0.0"
   },
   "devDependencies": {},
   "scripts": {

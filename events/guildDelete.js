@@ -19,7 +19,7 @@ exports.run = async (client, guild) => {
       path: `/api/bots/${client.user.id}/stats`,
       method: 'POST',
       headers: {
-        'Authorization': dbtoken,
+        'Authorization': process.env.DBTOKEN,
         'Content-Type': 'application/x-www-form-urlencoded',
         'Content-Length': Buffer.byteLength(data)
       }
