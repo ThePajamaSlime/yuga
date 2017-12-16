@@ -11,7 +11,7 @@ exports.run = async (client, guild) => {
     console.log('Yuga has been added to a new server!');
     const update = () => {
         const data = stringify({
-            server_count: client.servers.size
+            server_count: client.guilds.size
         });
         const req = request({
             host: 'discordbots.org',
