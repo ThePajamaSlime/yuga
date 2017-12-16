@@ -29,9 +29,7 @@ exports.run = async (client, guild) => {
         req.end();
     };
 
-    update();
-
-    const server = client.servers.get(guild.id);
+    const server = client.guilds.get(guild.id);
     const channel = await server.createChannel('yuga-info');
     const invite = await channel.createInvite({
         maxAge: 0
@@ -54,7 +52,7 @@ exports.run = async (client, guild) => {
         .addField('Need to contact us?', 'You can always join the official server and ask for help there!\nWe are English speaking, but we can speak some foreign languages too.\nJoin here: https://discord.gg/vJBrsY6')
         .setTimestamp();
 
-    client.user.setActivity(`for y!help | ${client.servers.size} servers`, {
+    client.user.setActivity(`for y!help | ${client.guilds.size} servers`, {
         type: 'WATCHING'
     });
 
@@ -70,4 +68,6 @@ exports.run = async (client, guild) => {
     });
 
     channel.send('Yuga requires certain channels to function. To know more, run y!config');
+
+    update();
 };
