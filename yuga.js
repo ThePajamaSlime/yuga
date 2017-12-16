@@ -2,7 +2,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({
+  disableEveryone: true
+});
+
 const fs = require('fs');
 
 //Event Handler
