@@ -1,7 +1,34 @@
 const Discord = require('discord.js');
+const {
+  stringify
+} = require('querystring');
 
-exports.run = async(client, guild) => {
+const {
+  request
+} = require('https');
 
+const dbtoken = require('../config.json').dbtoken;
+
+exports.run = async (client, guild) => {
+    const update = () => {
+        const data = stringify({
+            server_count: client.guilds.size
+        });
+        const req = request({
+            host: 'discordbots.org',
+            path: `/api/bots/${client.user.id}/stats`,
+            method: 'POST',
+            headers: {
+                'Authorization': dbtoken,
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': Buffer.byteLength(data)
+            }
+        });
+        req.write(data);
+        req.end();
+    };
+
+    update();
     guild = client.guilds.get(guild.id);
     const channel = await guild.createChannel('yuga-info')
     const invite = await channel.createInvite({
