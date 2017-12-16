@@ -1,12 +1,12 @@
 # Yuga
 Yuga is a free to use, open source Discord Bot (under the MIT license)
 
-#Adding Yuga
+# Adding Yuga
 To add Yuga, first navigate to the [invite url](https://discordapp.com/oauth2/authorize?client_id=294141889010204684&scope=bot&permissions=8)
 
 Please for the love of god, make sure Yuga has admin perms or else shit WILL break.
 
-#Contributing
+# Contributing
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
