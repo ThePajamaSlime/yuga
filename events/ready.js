@@ -38,4 +38,6 @@ exports.run = (client) => {
     client.channels.get('308278703283240960').send(`Yuga's recent pings are: ${client.pings}, with an average of ${client.ping}. (API response time for Discord)`),
       1200000;
   });
+
+  module.exports.errorchannel = client.channels.get('385485532458778626');
 };

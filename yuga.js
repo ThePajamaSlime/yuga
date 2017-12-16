@@ -25,7 +25,7 @@ function error(err) {
     .setTitle('New Error Caught!')
     .setTimestamp()
     .setDescription(`\`\`\`xl\n${err.stack}\`\`\``);
-  client.channels.get('385485532458778626').send({
+  exports.errorchannel.send({
     embed: errorembed
   });
 }
