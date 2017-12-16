@@ -1,4 +1,4 @@
-exports.run = async (client, msg) => {
+exports.run = async(client, msg) => {
   const Discord = require('discord.js');
 
   const embed = new Discord.MessageEmbed()
@@ -14,13 +14,11 @@ exports.run = async (client, msg) => {
     .setTimestamp();
 
   msg.channel.send(`${msg.author}, I have sent it to your DMs!\nI'll also send it here, and pin it.`);
-  const aMessage = await msg.author.send({
+  await msg.author.send({
     embed
   });
-  aMessage.pin();
 
-  const cMessage = await msg.channel.send({
+  await msg.channel.send({
     embed
   });
-  cMessage.pin();
 };
