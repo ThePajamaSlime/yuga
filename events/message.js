@@ -58,6 +58,7 @@ exports.run = async (client, msg) => {
         //Logger
         msg.channel.stopTyping();
     }
+
     if (msg.mentions.users.has(client.user.id, {
             ignoreEveryone: true
         })) {
@@ -65,6 +66,7 @@ exports.run = async (client, msg) => {
         command = msg.content;
         command = command.slice(yuga.length);
         args = msg.content.slice(yuga.length + command.length)
+        command = command.slice(0, args.length)
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
