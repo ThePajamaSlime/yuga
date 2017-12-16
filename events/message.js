@@ -62,7 +62,9 @@ exports.run = async (client, msg) => {
     if (msg.mentions.users.has(client.user.id, {
             ignoreEveryone: true
         })) {
-        command = command.slice(msg.mentions.users.length + 1);
+
+        yuga = '<@294141889010204684>';
+        command = command.slice(yuga.length + 1);
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
