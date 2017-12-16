@@ -59,6 +59,7 @@ exports.run = async (client, msg) => {
         msg.channel.stopTyping();
     }
 
+//Prefix checker 3: Mentions
     if (msg.mentions.users.has(client.user.id, {
             ignoreEveryone: true
         })) {
