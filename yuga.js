@@ -32,4 +32,5 @@ function error(err) {
 
 process.on('uncaughtException', (err) => {
   error(err);
+  console.error(err);
 });
