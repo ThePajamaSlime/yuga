@@ -59,7 +59,7 @@ exports.run = async (client, msg) => {
         //Logger
         msg.channel.stopTyping();
     }
-    if (msg.mentions.users.first().includes(client.user)) {
+    if (msg.mentions.users.first().includes(client.user.username)) {
         command = command.slice(msg.mentions.users.first().length + 1);
         console.log('Command running, Handler: 3');
         msg.channel.startTyping();
