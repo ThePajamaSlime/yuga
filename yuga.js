@@ -1,11 +1,9 @@
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 dotenv.config();
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
-
-const color = require('./db/db.json').color;
 
 //Event Handler
 fs.readdir('./events/', (err, files) => {
@@ -18,19 +16,3 @@ fs.readdir('./events/', (err, files) => {
 });
 
 client.login(process.env.TOKEN);
-
-function error(err) {
-  const errorembed = new Discord.MessageEmbed()
-    .setColor(color)
-    .setTitle('New Error Caught!')
-    .setTimestamp()
-    .setDescription(`\`\`\`xl\n${err.stack}\`\`\``);
-  exports.errorchannel.send({
-    embed: errorembed
-  });
-}
-
-process.on('uncaughtException', (err) => {
-  error(err);
-  console.error(err);
-});

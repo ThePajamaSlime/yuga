@@ -39,5 +39,4 @@ exports.run = (client) => {
       1200000;
   });
 
-  module.exports.errorchannel = client.channels.get('385485532458778626');
 };
