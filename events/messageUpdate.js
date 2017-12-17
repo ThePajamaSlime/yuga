@@ -14,7 +14,7 @@ exports.run = (client, old, msg) => {
         });
     }
 
-    const args = msg.content.split(' ').slice(1);
+   let args = msg.content.split(' ').slice(1);
     let command = msg.content.split(' ')[0];
     command = command.slice(prefix.length);
     //Prefix checker #2: Edited command messages
@@ -46,7 +46,7 @@ exports.run = (client, old, msg) => {
         });
         //Logger
         msg.channel.stopTyping();
-       }
+      }
      //Prefix Checker #4: Mention edited
     if (msg.mentions.users.has(client.user.id, {
             ignoreEveryone: true
