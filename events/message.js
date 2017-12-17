@@ -70,9 +70,9 @@ exports.run = async (client, msg) => {
         
         command = content[1]
         leftovers = content.slice(2)
-        
-        for(i;i in leftovers) {
-            args = leftovers[i]
+        args = []
+        for (i in leftovers) {
+            args.push(leftovers[i])
          }
         
         console.log('Command running, Handler: 3');
