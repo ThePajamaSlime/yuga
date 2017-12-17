@@ -69,7 +69,7 @@ exports.run = async (client, msg) => {
         command = command.slice(yuga.length);
         console.log(command)
         
-        args = command.slice(command.length + 1)
+        args = msg.content.slice(0, command.length + 1)
         console.log(args)
         command = command.slice(0, command.length - args.length)
         console.log(command)
