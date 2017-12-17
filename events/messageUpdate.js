@@ -46,5 +46,49 @@ exports.run = (client, old, msg) => {
         });
         //Logger
         msg.channel.stopTyping();
+       }
+     //Prefix Checker #4: Mention edited
+    if (msg.mentions.users.has(client.user.id, {
+            ignoreEveryone: true
+        })) {
+        
+        content = msg.content.split(' ');
+        console.log(content)
+        
+        
+        command = content[1]
+        leftovers = content.slice(2)
+        args = []
+        for (i in leftovers) {
+            args.push(leftovers[i])
+         }
+        
+        console.log('Command running, Handler: 4');
+        msg.channel.startTyping();
+        const log = new Discord.MessageEmbed()
+            .setTitle('**__LOG__**')
+            .setColor(color)
+            .addField('User', `${msg.author.tag} ID: ${msg.author.id}`)
+            .addField('Command', `${msg.content}`)
+            .addField('Server', `${msg.guild.name} ID: ${msg.guild.id}`)
+            .setTimestamp()
+            .setThumbnail(client.user.avatarURL());
+        //Running Commands
+        try {
+            const commandFile = require(`../commands/${command}.js`);
+            commandFile.run(client, msg, args);
+        } catch (err) {
+            msg.reply(`Command execution failed!\n Error: ${err.message}\nCheck spelling of command, edit your message if you can.\nIf the error seems unusual, message @Striker#7250, or join the server and ask for help.\nPlease, post your error so we know what we're dealing with here :)`);
+            error(err);
+            msg.channel.stopTyping();
+        }
+        //End Running Commands
+
+        //Logger
+        client.channels.get('308545302615293953').send({
+            embed: log
+        });
+        //Logger
+        msg.channel.stopTyping();
     } else return;
 };
