@@ -64,7 +64,7 @@ exports.run = async (client, msg) => {
             ignoreEveryone: true
         })) {
         yuga = '<@294141889010204684> ';
-        command = msg.content;
+        command = msg.content.split(' ');
         command = command.slice(yuga.length);
         args = command.slice(command.length + 1)
         command = command.slice(command.length, args.length)
