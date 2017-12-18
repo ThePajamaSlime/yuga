@@ -1,31 +1,13 @@
 const Discord = require('discord.js');
-const {
-  stringify
-} = require('querystring');
-
-const {
-  request
-} = require('https');
+const superagent = require('superagent');
 
 exports.run = async (client, guild) => {
-    console.log('Yuga has been added to a new server!');
-    const update = () => {
-        const data = stringify({
-            server_count: client.guilds.size
-        });
-        const req = request({
-            host: 'discordbots.org',
-            path: `/api/bots/${client.user.id}/stats`,
-            method: 'POST',
-            headers: {
-                'Authorization': process.env.DBTOKEN,
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Content-Length': Buffer.byteLength(data)
-            }
-        });
-        req.write(data);
-        req.end();
-    };
+ console.log('Yuga has been added to a new server!');
+ superagent.post('https://discordbots.org/api/bots/stats')    
+   .set('Authorization', process.env.DBTOKEN)    
+   .send({ server_count: client.guilds && client.guilds.size ? client.guilds.size : (client.Guilds ? client.Guilds.size : Object.keys(client.Servers).length) })    
+   .then(() => console.log('Updated discordbots.org stats!')    
+   .catch(err => console.error(`Error updating discordbots.org stats: ${err.body} || ${err}`)
 
     console.log('Finding server...');
     const server = client.guilds.get(guild.id);
