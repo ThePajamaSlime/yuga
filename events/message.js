@@ -56,9 +56,8 @@ exports.run = async(client, msg) => {
         //Logger
         client.channels.get('308545302615293953').send({
             embed: log
-        });
-        //Logger
-        msg.channel.stopTyping();
+        }).then(msg.channel.stopTyping());
+        //Logger    
     }
 
     //Prefix checker 3: Mentions
@@ -101,9 +100,8 @@ exports.run = async(client, msg) => {
         //Logger
         client.channels.get('308545302615293953').send({
             embed: log
-        });
+        }).then(msg.channel.stopTyping());
         //Logger
-        msg.channel.stopTyping();
     } else return;
     //Code to do nothing if there is no prefix. All other messages are ignored thus.
 };
