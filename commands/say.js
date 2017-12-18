@@ -1,6 +1,5 @@
-exports.run = (client, msg, args) => {
-      var argresult = args.join(' ');
-      msg.delete();
-      console.log(msg.author.tag + ' Is saying ' + argresult);
-      msg.channel.send("\u200B" + argresult);
-}
+exports.run = async (client, msg, args) => {
+      const say = args.join(' ');
+      await msg.delete();
+      msg.channel.send('\u200B' + say);
+};
