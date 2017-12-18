@@ -43,9 +43,8 @@ exports.run = (client, old, msg) => {
         //Logger
         client.channels.get('308545302615293953').send({
             embed: editedlog
-        });
+        }).then(msg.channel.stopTyping());
         //Logger
-        msg.channel.stopTyping();
       }
      //Prefix Checker #4: Mention edited
     if (msg.mentions.users.has(client.user.id, {
@@ -87,8 +86,7 @@ exports.run = (client, old, msg) => {
         //Logger
         client.channels.get('308545302615293953').send({
             embed: log
-        });
+        }).then(msg.channel.stopTyping());
         //Logger
-        msg.channel.stopTyping();
     } else return;
 };
