@@ -57,7 +57,4 @@ exports.run = async (client, guild) => {
 
     channel.send('Yuga requires certain channels to function. To know more, run y!config');
     console.log('Messages sent!');
-
-    update();
-    console.log('Discord bots updated!');
 };
