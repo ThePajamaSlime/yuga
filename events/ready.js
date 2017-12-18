@@ -4,7 +4,7 @@ exports.run = (client) => {
   superagent.post('https://discordbots.org/api/bots/stats')
     .set('Authorization', process.env.DBTOKEN)
     .send({ server_count: client.guilds && client.guilds.size ? client.guilds.size : (client.Guilds ? client.Guilds.size : Object.keys(client.Servers).length) })
-    .then(() => console.log('Updated discordbots.org stats!')
+    .then(() => console.log('Updated discordbots.org stats!'))
     .catch(err => console.error(`Error updating discordbots.org stats: ${err.body} || ${err}`))
   
   const guilds = client.guilds.size;
