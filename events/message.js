@@ -1,10 +1,8 @@
 const prefix = 'y!';
 const Discord = require('discord.js');
 const color = require('../db/db.json').color;
-const sql = require('sqlite');
-sql.open('../db/customprefixes.sql');
 
-exports.run = async(client, msg) => {
+exports.run = async (client, msg) => {
     //Custom error catcher function
     function error(err) {
         const errorembed = new Discord.MessageEmbed()
@@ -66,14 +64,14 @@ exports.run = async(client, msg) => {
         })) {
 
         content = msg.content.split(' ');
-        console.log(content)
+        console.log(content);
 
 
-        command = content[1]
-        leftovers = content.slice(2)
-        args = []
+        command = content[1];
+        leftovers = content.slice(2);
+        args = [];
         for (i in leftovers) {
-            args.push(leftovers[i])
+            args.push(leftovers[i]);
         }
 
         console.log('Command running, Handler: 3');
