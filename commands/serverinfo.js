@@ -33,8 +33,8 @@ exports.run = (client, msg) => {
     });
 
     let verificationLevel = msg.guild.verificationLevel;
-    const indexes = ['0', '1', '2', '3', '4']
-    const levels = ['None', 'Low', 'Medium', '(╯°□°）╯︵ ┻━┻ ', '┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻']
+    const indexes = ['0', '1', '2', '3', '4'];
+    const levels = ['None', 'Low', 'Medium', '(╯°□°）╯︵ ┻━┻ ', '┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻'];
     for (i in indexes) {
         verificationLevel = levels[i];
     }
