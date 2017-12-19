@@ -18,6 +18,14 @@ product.hubspot.com/blog/git-and-github-tutorial-for-beginners <- This is a grea
 
 Pull requests are reviewed and then accepted asap.
 
+Below are some images/guides as to how to do this :)
+[![Image one](https://i.imgur.com/wRzqJ5C.png)] [![Image two](https://i.imgur.com/YXwUELX.png)] 
+[![Image three](https://i.imgur.com/W2eV7dY.png)] [![Image four](https://i.imgur.com/exNDe30.png)]
+[![Image four](https://i.imgur.com/dFaU0Zy.png)] [![Image five](https://i.imgur.com/fPmDGC0.png)]
+[![Image six](https://i.imgur.com/MvOFAHd.png)]
+
+
+
 # Author
 
 **Yuga** © [Striker](https://github.com/strikerrr).<br>
