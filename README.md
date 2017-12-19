@@ -7,6 +7,8 @@ To add Yuga, first navigate to the [invite url](https://discordapp.com/oauth2/au
 Please for the love of god, make sure Yuga has admin perms or else shit WILL break.
 
 # Contributing
+Before contributingm try to have a solid understanding of how to use github.
+product.hubspot.com/blog/git-and-github-tutorial-for-beginners <- This is a great tutorial!
 
 1. Fork it using the fork button!
 2. Create your own branch from your fork.
@@ -22,15 +24,4 @@ Pull requests are reviewed and then accepted asap.
 Authored and maintained by Striker.
 
 # Discord Bots
-[![Discord Bots](https://discordbots.org/api/widget/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
-
-[![Discord Bots](https://discordbots.org/api/widget/status/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
-
-
-[![Discord Bots](https://discordbots.org/api/widget/servers/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
-
-[![Discord Bots](https://discordbots.org/api/widget/upvotes/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
-
-[![Discord Bots](https://discordbots.org/api/widget/lib/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
-
-[![Discord Bots](https://discordbots.org/api/widget/owner/294141889010204684.png)](https://discordbots.org/bot/294141889010204684)
+[![Discord Bots](https://discordbots.org/api/widget/294141889010204684.svg)](https://discordbots.org/bot/294141889010204684)
