@@ -8,11 +8,13 @@ Please for the love of god, make sure Yuga has admin perms or else shit WILL bre
 
 # Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
+1. Fork it using the fork button!
+2. Create your own branch from your fork.
+3. Edit files, create them, do stuff.
+4. Commit to your branch your changes
 5. Submit a pull request :D
+
+Pull requests are reviewed and then accepted asap.
 
 # Author
 
