@@ -105,9 +105,9 @@ exports.run = async(client, msg) => {
         //Logger
     }
 
-    p = await db.fetchObject(msg.guild.id) 
+   const p = await db.fetchObject(msg.guild.id);
     if (!p) return;
-    
+
     //Command Handler #5: Custom Prefixes
     if (msg.content.startsWith(p.text)) {
         command = command.slice(p.text.length)

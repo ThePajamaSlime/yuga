@@ -1,9 +1,9 @@
 const prefix = 'y!';
 const Discord = require('discord.js');
 const color = require('../db/db.json').color;
-const db = require('quick.db')
+const db = require('quick.db');
 
-exports.run = (client, old, msg) => {
+exports.run = async (client, old, msg) => {
     function error(err) {
         const errorembed = new Discord.MessageEmbed()
             .setColor(color)
@@ -15,7 +15,7 @@ exports.run = (client, old, msg) => {
         });
     }
 
-   let args = msg.content.split(' ').slice(1);
+    let args = msg.content.split(' ').slice(1);
     let command = msg.content.split(' ')[0];
     command = command.slice(prefix.length);
     //Prefix checker #2: Edited command messages
@@ -46,23 +46,23 @@ exports.run = (client, old, msg) => {
             embed: editedlog
         }).then(msg.channel.stopTyping());
         //Logger
-      }
-     //Prefix Checker #4: Mention edited
+    }
+    //Prefix Checker #4: Mention edited
     if (msg.mentions.users.has(client.user.id, {
             ignoreEveryone: true
         })) {
-        
+
         content = msg.content.split(' ');
         console.log(content)
-        
-        
+
+
         command = content[1]
         leftovers = content.slice(2)
         args = []
         for (i in leftovers) {
             args.push(leftovers[i])
-         }
-        
+        }
+
         console.log('Command running, Handler: 4');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
@@ -89,13 +89,14 @@ exports.run = (client, old, msg) => {
             embed: log
         }).then(msg.channel.stopTyping());
         //Logger
-    } 
-    p = await db.fetchObject(msg.guild.id)
+    }
+
+    const p = await db.fetchObject(msg.guild.id);
     if (!p) return;
 
     //Command Handler #6: Custom Prefixes
     if (msg.content.startsWith(p.text)) {
-        command = command.slice(p.text.length)
+        command = command.slice(p.text.length);
         console.log('Command running, Handler: 6');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
