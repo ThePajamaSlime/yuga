@@ -92,10 +92,10 @@ exports.run = async (client, old, msg) => {
     }
 
     const p = await db.fetchObject(msg.guild.id);
-    if (!p) return;
+    if (!p.text) return;
 
     //Command Handler #6: Custom Prefixes
-    if (msg.content.startsWith(p.text)) {
+     if (msg.content.startsWith(p.text)) {
         command = command.slice(p.text.length);
         console.log('Command running, Handler: 6');
         msg.channel.startTyping();

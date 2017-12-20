@@ -106,11 +106,11 @@ exports.run = async(client, msg) => {
     }
 
    const p = await db.fetchObject(msg.guild.id);
-    if (!p) return;
+    if (!p.text) return;
 
     //Command Handler #5: Custom Prefixes
     if (msg.content.startsWith(p.text)) {
-        command = command.slice(p.text.length)
+        command = command.slice(p.text.length);
         console.log('Command running, Handler: 5');
         msg.channel.startTyping();
         const log = new Discord.MessageEmbed()
